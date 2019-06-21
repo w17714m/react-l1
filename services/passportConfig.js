@@ -3,6 +3,9 @@ const passport = require("passport");
 const GoogleStrategy = require('passport-google-oauth20');
 const mongoose = require('mongoose');
 
+
+
+
 const User = mongoose.model('user');
 
 
@@ -24,8 +27,8 @@ passport.deserializeUser((id,done)=>{
 require('dotenv').config()
 passport.use(new GoogleStrategy(
     {
-        clientID: process.env.GOOGLE_CLIENT,
-        clientSecret: process.env.GOOGLE_SECRET,
+        clientID: variables.googleClientID,
+        clientSecret: variables.googleClientSecret,
         callbackURL: '/auth/google/callback',
         scope: 'profile'
     },
