@@ -30,7 +30,8 @@ passport.use(new GoogleStrategy(
         clientID: variables.googleClientID,
         clientSecret: variables.googleClientSecret,
         callbackURL: '/auth/google/callback',
-        scope: 'profile'
+        scope: 'profile',
+        proxy: true
     },
     (accessToken, refreshToken, profile, cb) => {
         console.log("=====OBTUVO TOKEN=======");
