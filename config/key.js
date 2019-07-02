@@ -6,9 +6,7 @@ if(process.env.ENV==='prod'){
         cookieKey: process.env.COOKIE_KEY
     };
 }else{
-    /*const dev = require('./dev');
-    module.exports = dev;*/
-    /*const dev = require('./dev');*/
-    module.exports = {};
+    const dev = require('./dev');
+    module.exports = dev;
 }
 

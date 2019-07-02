@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "server": "nodemon app.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -13,6 +15,7 @@
     "dotenv": "^8.0.0",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "http-proxy-middleware": "^0.19.1",
     "mongoose": "^5.6.0",
     "morgan": "~1.9.1",
     "nodemon": "^1.19.1",
